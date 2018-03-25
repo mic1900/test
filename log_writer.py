@@ -143,7 +143,10 @@ class LogWriter(object):
 		# - the value of function computation (in argument)
 		# applied on number 47 
 		# to the output of get_movie_reference
-		pass
+		out = self.get_movie_reference()
+		if computation != None:
+			out += "\n" + str(computation(47))
+		return out
 
 	def combining_method(self):
 		#14
@@ -152,7 +155,10 @@ class LogWriter(object):
 		# - string "0 O 0 O 0 O 0 O 0 O 0 O"
 		# - output of get_second_part applied on computation method (class member)
 		#return the concatenation
-		pass
+		out = self.get_first_part()
+		out += "0 O 0 O 0 O 0 O 0 O 0 O"
+		out += self.get_second_part(self.computation)
+		return out
 
 	def __str__(self):
 		return self.combining_method()
