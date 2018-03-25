@@ -35,7 +35,9 @@ class LogWriter(object):
 		#
 		#e.g:
 		# insert_data_in_text("AAAA list BBBB", [1,2,3]) = "AAAA list ([1, 2, 3]) BBBB"
-		pass
+		out = text.partition("list")
+		text = out[0] + out[1] +" (" + str(data) + ")" + out[2]
+		return text
 		
 	@staticmethod
 	def count_o(text):
