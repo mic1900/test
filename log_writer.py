@@ -14,7 +14,7 @@ class LogWriter(object):
 		#1
 		# return every second element (counting from index 1) from passed list 
 		# e.g. get_every_second_element([1,2,3,4]) == [2,4]
-		pass
+		return data[1::2]
 
 	@staticmethod
 	def avg_every_second_element(data):
