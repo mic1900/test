@@ -132,7 +132,10 @@ class LogWriter(object):
 		# - the value of function computation (in argument)
 		# applied on number 47 
 		# to the output of get_movie_reference
-		pass
+		out = self.get_movie_reference()
+		if computation != None:
+			out += "\n" + str(computation(47))
+		return out
 
 	def combining_method(self):
 		#14
