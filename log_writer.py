@@ -113,7 +113,14 @@ class LogWriter(object):
 		#Lastly if o_count is higher than seven append empty line and
 		#empty call of what_is_your_quest to the output.
 		#Return the output
-		pass
+		out = None
+		if self.o_count_is_even() == True:
+			out = LogWriter.what_is_added_the_meaning_of_life(self.o_count)
+		else:
+			out = LogWriter.what_is_your_quest(LogWriter.get_second_word(self.head_text))
+		if self.o_count > 7:
+			out += "\n" + LogWriter.what_is_your_quest()
+		return out
 
 	@staticmethod
 	def computation(x):
