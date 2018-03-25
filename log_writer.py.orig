@@ -14,8 +14,13 @@ class LogWriter(object):
 		#1
 		# return every second element (counting from index 1) from passed list 
 		# e.g. get_every_second_element([1,2,3,4]) == [2,4]
+<<<<<<< HEAD
+		return data
+
+=======
 		return data[1::2]
 		
+>>>>>>> 1a16e1be2e968e182efee776404e5d44d1d089db
 	@staticmethod
 	def avg_every_second_element(data):
 		#2
@@ -40,9 +45,7 @@ class LogWriter(object):
 		#
 		#e.g:
 		# insert_data_in_text("AAAA list BBBB", [1,2,3]) = "AAAA list ([1, 2, 3]) BBBB"
-		out = text.partition("list")
-		text = out[0] + out[1] +" (" + str(data) + ")" + out[2]
-		return text
+		pass
 		
 	@staticmethod
 	def count_o(text):
@@ -50,7 +53,6 @@ class LogWriter(object):
 		#Count occurances of character 'o' in text
 		#e.g.:
 		# count_o("oOo0O00o") == 5
-		#added this comment on branch 4
 		return text.count('o') + text.count('O')		
 
 	def get_first_part(self):
@@ -62,24 +64,15 @@ class LogWriter(object):
 		#Set member o_count with number of o's in contained 
 		# in text you created above - use count_o.
 		# Return newly created text AND value of o_count
-		out = str(self.head_text) + "_________"
-		out += "\n After change: \n"
-		out += LogWriter.insert_data_in_text(self.head_text, self.list_data)
-		self.o_count = LogWriter.count_o(out)
-		return out, self.o_count
+		pass
 
 	@staticmethod
-	def what_is_added_the_meaning_of_life(add=None):
+	def what_is_added_the_meaning_of_life(add):
 		#6
 		#return square root of 42 PLUS add
 		# if add is not given return 42 
 		#
-		import math
-		if(add != None):
-			out = math.sqrt(42. + add)
-		else:
-			out = math.sqrt(42.)
-		return out
+		pass
 
 	@staticmethod
 	def what_is_your_quest(quest="holy grail"):
