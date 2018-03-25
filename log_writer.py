@@ -40,7 +40,9 @@ class LogWriter(object):
 		#
 		#e.g:
 		# insert_data_in_text("AAAA list BBBB", [1,2,3]) = "AAAA list ([1, 2, 3]) BBBB"
-		pass
+		out = text.partition("list")
+		text = out[0] + out[1] +" (" + str(data) + ")" + out[2]
+		return text
 		
 	@staticmethod
 	def count_o(text):
@@ -48,6 +50,7 @@ class LogWriter(object):
 		#Count occurances of character 'o' in text
 		#e.g.:
 		# count_o("oOo0O00o") == 5
+		#added this comment on branch 4
 		return text.count('o') + text.count('O')		
 
 	def get_first_part(self):
@@ -59,7 +62,11 @@ class LogWriter(object):
 		#Set member o_count with number of o's in contained 
 		# in text you created above - use count_o.
 		# Return newly created text AND value of o_count
-		pass
+		out = str(self.head_text) + "_________"
+		out += "\n After change: \n"
+		out += LogWriter.insert_data_in_text(self.head_text, self.list_data)
+		self.o_count = LogWriter.count_o(out)
+		return out, self.o_count
 
 	@staticmethod
 	def what_is_added_the_meaning_of_life(add):
